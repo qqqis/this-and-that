@@ -4,6 +4,6 @@ import { UserModule } from '../domain/rds/module/User';
 import { BookModule } from '../domain/rds/module/Book';
 
 @Module({
-  imports: [DatabaseModule, UserModule, BookModule],
+    imports: [DatabaseModule, UserModule, BookModule],
 })
 export class AppModule {}

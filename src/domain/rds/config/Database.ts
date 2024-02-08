@@ -3,8 +3,8 @@ import { MyTypeOrmModule } from './TypeormDataSource';
 import { sequelizeProvider } from './SequelizeDataSource';
 
 @Module({
-  imports: [MyTypeOrmModule],
-  providers: [...sequelizeProvider],
-  exports: [...sequelizeProvider],
+    imports: [MyTypeOrmModule],
+    providers: [...sequelizeProvider],
+    exports: [...sequelizeProvider],
 })
 export class DatabaseModule {}
