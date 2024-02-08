@@ -7,11 +7,11 @@ import { AddUserDto } from '../../../dto';
 export class UserRepository {
     constructor(@Inject(SequelizeProvider.USER_TABLE) private userRepository: typeof User) {}
 
-    public getById(id: number): Promise<any> {
+    public getById(id: number): Promise<User | null> {
         return this.userRepository.findOne({ where: { id } });
     }
 
-    public findAll(): Promise<any> {
+    public findAll(): Promise<User[]> {
         return this.userRepository.findAll();
     }
 

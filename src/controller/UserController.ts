@@ -9,7 +9,7 @@ export class UserController {
     public constructor(private readonly userService: UserService) {}
 
     @Get()
-    public async getUsers(): Promise<any> {
+    public async getUsers(): Promise<User[]> {
         const user = await this.userService.findAll();
 
         return user;
@@ -22,7 +22,7 @@ export class UserController {
     }
 
     @Get('/:id')
-    public async getUser(@Param('id') id: number): Promise<User> {
+    public async getUser(@Param('id') id: number): Promise<User | null> {
         const user = await this.userService.findUser(id);
         return user;
     }

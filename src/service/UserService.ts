@@ -7,11 +7,11 @@ import { User } from '../domain/rds/entity/User';
 export class UserService {
     public constructor(private userRepository: UserRepository) {}
 
-    public async findUser(id: number): Promise<User> {
+    public async findUser(id: number): Promise<User | null> {
         return await this.userRepository.getById(id);
     }
 
-    public async findAll(): Promise<User> {
+    public async findAll(): Promise<User[]> {
         return await this.userRepository.findAll();
     }
 
