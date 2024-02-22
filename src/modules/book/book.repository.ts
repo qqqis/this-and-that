@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { DataSource, Equal, Repository } from 'typeorm';
-import { Book } from '../entity/Book';
-import { AddBookDto } from '../../../dto/BookDto';
+import { Book } from './book.entity';
+import { AddBookDto } from './dtos';
 
 @Injectable()
 export class BookRepository {

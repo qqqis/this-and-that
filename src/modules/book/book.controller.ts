@@ -1,8 +1,8 @@
 import { Controller, Body, Get, UsePipes, ValidationPipe, Post, Param } from '@nestjs/common';
-import { BookService } from '../service/BookService';
-import { Book } from '../domain/rds/entity/Book';
-import { validationPipeOptions } from '../common/validation';
-import { AddBookDto } from '../dto/BookDto';
+import { BookService } from './book.service';
+import { Book } from './book.entity';
+import { validationPipeOptions } from '../../common/validation';
+import { AddBookDto } from './dtos';
 
 @Controller('/books')
 export class BookController {

@@ -1,7 +1,7 @@
 import { Sequelize, SequelizeOptions } from 'sequelize-typescript';
 import { Provider } from '@nestjs/common';
-import { User } from '../entity/User';
-import { SequelizeProvider } from '../../../common/constants';
+import { User } from '../../modules/user/user.entity';
+import { SequelizeProvider } from '../../common/constants';
 
 const sequelizeOptions: SequelizeOptions = {
     host: process.env.DB_HOST || 'localhost',
@@ -14,13 +14,13 @@ const sequelizeOptions: SequelizeOptions = {
         max: 5,
         min: 0,
         acquire: 30000,
-        idle: 10000,
+        idle: 10000
     },
     define: {
         freezeTableName: true,
-        underscored: true,
+        underscored: true
     },
-    logging: false,
+    logging: false
 };
 
 export const sequelizeProvider: Provider[] = [
@@ -31,6 +31,6 @@ export const sequelizeProvider: Provider[] = [
             sequelize.addModels([User]);
             await sequelize.sync({ force: false });
             return sequelize;
-        },
-    },
+        }
+    }
 ];

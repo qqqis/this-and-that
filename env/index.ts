@@ -12,7 +12,6 @@ class Index {
 
     port: string = '';
     host: string = '';
-    allowedOrigin?: string[];
 
     dbURI: any;
     mongoURI: string = '';
@@ -24,7 +23,6 @@ class Index {
         this.isTest = process.env.NODE_ENV === 'test';
         this.port = getOsEnv('PORT', process.env['PORT']);
         this.host = getOsEnv('HOST', process.env['HOST']);
-        this.allowedOrigin = getOsEnvArray('ALLOWED_ORIGINS');
         this.dbURI = parse(getOsEnv('DB_URI'));
         this.mongoURI = getOsEnv('MONGO_URI');
     }

@@ -1,8 +1,8 @@
 import { Controller, Body, Get, UsePipes, ValidationPipe, Post, Param } from '@nestjs/common';
-import { AddUserDto } from '../dto';
-import { UserService } from '../service/UserService';
-import { User } from '../domain/rds/entity/User';
-import { validationPipeOptions } from '../common/validation';
+import { AddUserDto } from './dtos';
+import { UserService } from './user.service';
+import { User } from './user.entity';
+import { validationPipeOptions } from '../../common/validation';
 
 @Controller('/users')
 export class UserController {

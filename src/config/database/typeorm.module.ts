@@ -1,7 +1,7 @@
 import { DataSource } from 'typeorm';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Book } from '../entity/Book';
+import { Book } from '../../modules/book/book.entity';
 
 @Module({
     imports: [
@@ -14,8 +14,8 @@ import { Book } from '../entity/Book';
             database: 'dev_db',
             entities: [Book],
             synchronize: false,
-            logging: false,
-        }),
-    ],
+            logging: false
+        })
+    ]
 })
 export class MyTypeOrmModule {}

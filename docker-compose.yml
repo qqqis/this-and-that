@@ -12,3 +12,16 @@ services:
             MYSQL_DATABASE: dev_db
             TZ: Asia/Seoul
         platform: linux/x86_64
+
+    mongodb:
+        image: mongo:latest
+        container_name: mongodb
+        restart: always
+        ports:
+            - 27017:27017
+        volumes:
+            - ./mongodb:/data/db
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=rootuser
+            - MONGO_INITDB_ROOT_PASSWORD=rootpass
+            - MONGO_INITDB_DATABASE=mongo_dev

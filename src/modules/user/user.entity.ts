@@ -11,17 +11,17 @@ export class User extends Model<User> implements UserAttributes {
     @Column({
         type: DataType.INTEGER(),
         primaryKey: true,
-        autoIncrement: true,
+        autoIncrement: true
     })
     id: number;
 
     @Column({
-        type: DataType.STRING(64),
+        type: DataType.STRING(64)
     })
     name: string;
 
     @Column({
-        type: DataType.INTEGER(),
+        type: DataType.INTEGER()
     })
     age: number;
 }

@@ -1,12 +1,17 @@
-# nestjs-boilerplate
+# This and That I wanted to try.
 
-### 실행
+1. nest.js - typescript 기반의 프로젝트
+2. nginx -> 추후 with docker
+3. mongodb
+4. docker
+5. k8s
+6. redis
+7. rabbitMQ
+8. socket.io
+9. jwt
+10. oauth
 
-```bash
-$ cp ./env/.env.sample ./env/.env
-$ docker-compose up -d
-$ npm install
-$ npm run dev
-```
+### 폴더: 케밥케이스 kebab-case
 
--   [참고](https://github.com/mung9/nestjs-boilerplate)
+클래스: 파스칼 PaskalCase
+메서드 카멜 camelCase

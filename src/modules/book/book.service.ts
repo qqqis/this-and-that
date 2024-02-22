@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { Book } from '../domain/rds/entity/Book';
-import { BookRepository } from '../domain/rds/repository/BookRepository';
-import { AddBookDto } from '../dto/BookDto';
+import { Book } from './book.entity';
+import { BookRepository } from './book.repository';
+import { AddBookDto } from './dtos';
 import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
@@ -9,7 +9,7 @@ export class BookService {
     constructor(
         // @InjectRepository(Book)
         // @InjectRepository(BookRepository)
-        private readonly bookRepository: BookRepository,
+        private readonly bookRepository: BookRepository
     ) {}
 
     public async findAll(): Promise<Book[]> {
