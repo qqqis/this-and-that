@@ -4,8 +4,8 @@ import { MongoDBModule } from './mongodb.module';
 import { sequelizeProvider } from './sequelize.provider';
 
 @Module({
-    imports: [MyTypeOrmModule, MongoDBModule],
-    providers: [...sequelizeProvider],
-    exports: [...sequelizeProvider]
+  imports: [MyTypeOrmModule, MongoDBModule],
+  providers: [...sequelizeProvider],
+  exports: [...sequelizeProvider]
 })
 export class DatabaseModule {}
