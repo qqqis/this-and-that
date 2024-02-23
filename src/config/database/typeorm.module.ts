@@ -1,20 +1,20 @@
-import { DataSource } from 'typeorm';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Book } from '../../modules/book/book.entity';
 
 @Module({
     imports: [
-        TypeOrmModule.forRoot({
-            type: 'mysql',
-            host: 'localhost',
-            port: 9001,
-            username: 'root',
-            password: 'example',
-            database: 'dev_db',
-            entities: [Book],
-            synchronize: false,
-            logging: false
+        TypeOrmModule.forRootAsync({
+            imports: [ConfigModule],
+            useFactory: (configService: ConfigService) => ({
+                type: 'mysql',
+                url: configService.get('DB_URI'),
+                entities: [Book], // [__dirname + '/**/*.entity{.ts,.js}']
+                synchronize: true,
+                logging: false
+            }),
+            inject: [ConfigService]
         })
     ]
 })
